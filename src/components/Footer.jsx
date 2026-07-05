@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Facebook, Twitter, Phone, Mail, MapPin } from 'lucide-react';
+import { Instagram, Facebook, Youtube, Phone, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -19,11 +19,17 @@ const Footer = () => {
                             Continuing the legacy of homemade taste. We specialize in traditional Kerala food products made with love and hygiene.
                         </p>
                         <div className="flex gap-4">
-                            {[Instagram, Facebook, Twitter].map((Icon, i) => (
+                            {[
+                                { Icon: Instagram, href: 'https://www.instagram.com/eatsee.foods?igsh=MWp0enRkaGY1ZGh6dw==' },
+                                { Icon: Facebook, href: 'https://www.facebook.com/share/1E4UZeoJrn/' },
+                                { Icon: Youtube, href: 'https://youtube.com/@eatsee_foods?si=-GxTc_27OHc2pYXr' }
+                            ].map(({ Icon, href }, i) => (
                                 <a
                                     key={i}
-                                    href="#"
-                                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-zinc-900 shadow-sm hover:bg-primary hover:text-white transition-all text-gray-600 dark:text-gray-400"
+                                    href={href}
+                                    target={href !== '#' ? "_blank" : undefined}
+                                    rel={href !== '#' ? "noopener noreferrer" : undefined}
+                                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-black shadow-sm hover:bg-primary hover:text-white transition-all text-gray-600 dark:text-gray-400"
                                 >
                                     <Icon size={20} />
                                 </a>
@@ -35,7 +41,7 @@ const Footer = () => {
                     <div>
                         <h4 className="text-lg font-bold mb-6 dark:text-white">Quick Links</h4>
                         <ul className="space-y-4">
-                            {['Home', 'About Us', 'Products', 'Services', 'Gallery', 'Contact'].map((item) => (
+                            {['Home', 'About Us', 'Products', 'Services', 'Contact'].map((item) => (
                                 <li key={item}>
                                     <Link
                                         to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '')}`}
@@ -75,7 +81,7 @@ const Footer = () => {
                             </li>
                             <li className="flex gap-3 text-gray-600 dark:text-gray-400">
                                 <Mail className="text-primary shrink-0" size={20} />
-                                <span>info@eatsee.com</span>
+                                <span>eatseefoods@gmail.com</span>
                             </li>
                         </ul>
                     </div>

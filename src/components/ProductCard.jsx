@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
     return (
         <motion.div
             whileHover={{ y: -10 }}
-            className="group relative bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-zinc-800"
+            className="group relative bg-white dark:bg-black rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-zinc-800"
         >
             <div className="aspect-[4/5] overflow-hidden relative">
                 <img

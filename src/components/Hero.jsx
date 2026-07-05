@@ -26,14 +26,7 @@ const Hero = () => {
                     duration: 1,
                     ease: "power2.inOut",
                     force3D: true
-                }, "-=0.8")
-                .from(".hero-img-box", {
-                    scale: 0.9,
-                    opacity: 0,
-                    duration: 1.5,
-                    ease: "expo.out",
-                    force3D: true
-                }, "-=1");
+                }, "-=0.8");
         }, containerRef);
         return () => ctx.revert();
     }, []);
@@ -44,13 +37,7 @@ const Hero = () => {
 
             <div className="max-w-7xl mx-auto w-full text-center relative z-10 space-y-10">
                 <div className="flex flex-col items-center space-y-4">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="px-6 py-2 border border-primary/20 bg-primary/5 rounded-full text-primary font-bold uppercase tracking-[0.2em] text-xs hero-reveal"
-                    >
-                        Nadhira's Authentic Recipes
-                    </motion.div>
+
 
                     <h1 className="text-6xl md:text-[140px] font-playfair font-black text-gray-900 dark:text-white leading-[0.85] tracking-tighter">
                         <span className="hero-reveal block">Eatsee</span>
@@ -86,12 +73,10 @@ const Hero = () => {
                     </a>
                 </div>
 
-                <div className="hero-img-box absolute -bottom-40 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] opacity-20 pointer-events-none">
-                    <img src="/image/logo.png" alt="Background decoration" className="w-full h-full object-contain blur-md" />
-                </div>
+
             </div>
 
-            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 hero-reveal">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center  hero-reveal gap-2">
                 <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest">
                     <MousePointer2 size={14} className="animate-pulse" /> Scroll to Taste
                 </div>

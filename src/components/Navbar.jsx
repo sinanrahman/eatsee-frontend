@@ -11,7 +11,6 @@ const navLinks = [
     { name: 'About', path: '/about' },
     { name: 'Products', path: '/products' },
     { name: 'Services', path: '/services' },
-    { name: 'Gallery', path: '/gallery' },
     { name: 'Testimonials', path: '/testimonials' },
     { name: 'Contact', path: '/contact' },
 ];
@@ -19,10 +18,24 @@ const navLinks = [
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [show, setShow] = useState(true);
     const location = useLocation();
 
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 20);
+        let lastScrollY = window.scrollY;
+
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            setScrolled(currentScrollY > 20);
+            
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                setShow(false);
+            } else {
+                setShow(true);
+            }
+            lastScrollY = currentScrollY;
+        };
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -32,53 +45,49 @@ const Navbar = () => {
     }, [location]);
 
     return (
-        <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'py-3 glass-morphism shadow-lg' : 'py-5 bg-transparent'}`}>
-            <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <div className={`fixed top-6 left-0 w-full z-50 transition-transform duration-500 ${show ? 'translate-y-0' : '-translate-y-[200%]'}`}>
+            <nav className="max-w-6xl mx-auto w-[95%] bg-black/95 dark:bg-black/95 text-white backdrop-blur-md shadow-2xl py-3 px-4 md:px-6 rounded-full border border-white/10 flex justify-between items-center">
                 {/* Logo */}
-                <Link to="/" className="flex items-center gap-2 group">
-                    <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
+                <Link to="/" className="flex items-center group">
+                    <div className="w-10 h-10 rounded-full overflow-hidden">
                         <img src="/image/logo.png" alt="Eatsee Foods Logo" className="w-full h-full object-cover group-hover:scale-110 transition-transform" />
                     </div>
-                    <span className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                        EATSEE <span className="text-primary">FOODS</span>
-                    </span>
                 </Link>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center gap-8">
-                    <div className="flex items-center gap-6">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.path}
-                                to={link.path}
-                                className={`text-[10px] uppercase font-mono tracking-widest transition-colors hover:text-primary ${location.pathname === link.path ? 'text-primary' : 'text-gray-600 dark:text-gray-400'}`}
-                            >
-                                {link.name}
-                            </Link>
-                        ))}
-                    </div>
-                    <div className="h-6 w-[1px] bg-gray-300 dark:bg-gray-700 mx-2"></div>
-                    <div className="flex items-center gap-4">
-                        <DarkModeToggle />
-                        <a
-                            href={WHATSAPP_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-[#25D366] text-white px-6 py-2 rounded-full text-[10px] font-mono font-bold tracking-widest hover:bg-[#20b859] transition-all flex items-center gap-2"
+                <div className="hidden lg:flex items-center gap-8">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.path}
+                            to={link.path}
+                            className={`text-sm font-medium transition-colors hover:text-white ${location.pathname === link.path ? 'text-white' : 'text-gray-400'}`}
                         >
-                            <MessageCircle size={14} /> ORDER_NOW
-                        </a>
-                    </div>
+                            {link.name}
+                        </Link>
+                    ))}
+                </div>
+
+                {/* Actions (Right) */}
+                <div className="hidden lg:flex items-center gap-4">
+                    <DarkModeToggle />
+                    <a
+                        href={WHATSAPP_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-[#25D366] text-white px-6 py-2.5 rounded-full text-xs font-bold hover:bg-[#20b859] transition-all flex items-center gap-2 shadow-lg"
+                    >
+                        <MessageCircle size={16} /> Order Now
+                    </a>
                 </div>
 
                 {/* Mobile Toggle */}
-                <div className="flex md:hidden items-center gap-4">
+                <div className="flex lg:hidden items-center gap-4">
                     <DarkModeToggle />
-                    <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-gray-700 dark:text-gray-200">
-                        {isOpen ? <X size={28} /> : <Menu size={28} />}
+                    <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-white hover:bg-white/10 rounded-full transition-colors">
+                        {isOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
-            </div>
+            </nav>
 
             {/* Mobile Menu */}
             <AnimatePresence>
@@ -88,14 +97,13 @@ const Navbar = () => {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: '100%' }}
                         transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                        className="fixed inset-0 top-0 left-0 w-full h-screen bg-white dark:bg-dark-bg z-[60] flex flex-col p-8"
+                        className="fixed inset-0 top-0 left-0 w-full h-screen bg-white dark:bg-black z-[60] flex flex-col p-8"
                     >
                         <div className="flex justify-between items-center mb-12">
-                            <Link to="/" className="flex items-center gap-2">
-                                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
+                            <Link to="/" className="flex items-center">
+                                <div className="w-10 h-10 rounded-full overflow-hidden">
                                     <img src="/image/logo.png" alt="Logo" className="w-full h-full object-cover" />
                                 </div>
-                                <span className="text-xl font-bold dark:text-white">EATSEE <span className="text-primary">FOODS</span></span>
                             </Link>
                             <button onClick={() => setIsOpen(false)} className="p-2 dark:text-white">
                                 <X size={28} />
@@ -143,7 +151,7 @@ const Navbar = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </nav>
+        </div>
     );
 };
 

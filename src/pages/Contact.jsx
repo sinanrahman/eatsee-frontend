@@ -17,7 +17,7 @@ const Contact = () => {
     };
 
     return (
-        <div className="pt-24 pb-20 bg-zinc-50 dark:bg-dark-bg">
+        <div className="pt-24 pb-20 bg-zinc-50 dark:bg-black">
             <section className="section-padding">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
@@ -35,19 +35,19 @@ const Contact = () => {
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                                 {[
-                                    { icon: Phone, title: "Call Us", value: "+91 9562496164", sub: "Mon-Sat 6am-8pm" },
-                                    { icon: MessageCircle, title: "WhatsApp", value: "+91 9562496164", sub: "Fast response" },
-                                    { icon: Mail, title: "Email Us", value: "eatseefoods@gmail.com", sub: "General inquiries" },
-                                    { icon: MapPin, title: "Location", value: "Omassery, Kerala", sub: "Kozhikode district" },
+                                    { icon: Phone, title: "Call Us", value: "+91 9562496164", sub: "Mon-Sat 6am-8pm", link: "tel:+919562496164" },
+                                    { icon: MessageCircle, title: "WhatsApp", value: "+91 9562496164", sub: "Fast response", link: "https://wa.me/919562496164" },
+                                    { icon: Mail, title: "Email Us", value: "eatseefoods@gmail.com", sub: "General inquiries", link: "mailto:eatseefoods@gmail.com" },
+                                    { icon: MapPin, title: "Location", value: "Omassery, Kerala", sub: "Kozhikode district", link: "https://www.google.com/maps/search/Omassery,+Kerala" },
                                 ].map((item, i) => (
-                                    <div key={i} className="bg-white dark:bg-zinc-900 p-8 rounded-[2rem] border border-gray-100 dark:border-zinc-800 shadow-sm">
-                                        <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
+                                    <a key={i} href={item.link} target={(item.title === 'Location' || item.title === 'WhatsApp') ? "_blank" : undefined} rel="noopener noreferrer" className="block bg-white dark:bg-black p-8 rounded-[2rem] border border-gray-100 dark:border-zinc-800 shadow-sm hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 transition-all group">
+                                        <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
                                             <item.icon size={24} />
                                         </div>
                                         <h4 className="font-bold text-gray-400 text-sm uppercase mb-1">{item.title}</h4>
                                         <p className="font-bold text-lg dark:text-white mb-1">{item.value}</p>
                                         <p className="text-xs text-gray-400">{item.sub}</p>
-                                    </div>
+                                    </a>
                                 ))}
                             </div>
 
@@ -55,7 +55,7 @@ const Contact = () => {
                                 <p className="font-bold mb-4 dark:text-white">Follow Our Process</p>
                                 <div className="flex gap-4">
                                     {[Instagram, Facebook].map((Icon, i) => (
-                                        <a key={i} href="#" className="w-12 h-12 bg-white dark:bg-zinc-900 rounded-full flex items-center justify-center shadow-sm hover:bg-primary hover:text-white transition-all">
+                                        <a key={i} href="#" className="w-12 h-12 bg-white dark:bg-black rounded-full flex items-center justify-center shadow-sm hover:bg-primary hover:text-white transition-all">
                                             <Icon size={20} />
                                         </a>
                                     ))}
@@ -68,7 +68,7 @@ const Contact = () => {
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="bg-white dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800 p-10 md:p-16 rounded-[4rem] shadow-2xl"
+                            className="bg-white dark:bg-black border border-gray-100 dark:border-zinc-800 p-10 md:p-16 rounded-[4rem] shadow-2xl"
                         >
                             <h2 className="text-3xl font-playfair font-bold dark:text-white mb-8">Send a Message</h2>
                             <form onSubmit={handleSubmit} className="space-y-6">

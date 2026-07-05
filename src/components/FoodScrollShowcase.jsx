@@ -34,7 +34,7 @@ const foods = [
         name: "Chappathi",
         tagline: "Whole Wheat Goodness",
         description: "Soft, puffed Chappathis made from premium whole wheat. We ensure they stay fresh and soft for hours, providing a nutritious and homemade dining experience.",
-        image: "/image/chappathy.jpg",
+        image: "/image/chappathy.png",
         details: ["Premium Wheat", "Zero Oil Option", "Long-lasting Softness"],
     },
     {
@@ -47,11 +47,11 @@ const foods = [
     },
     {
         id: 6,
-        name: "Porotta",
-        tagline: "Flaky Layered Delight",
-        description: "Expertly layered wheat flatbreads with that perfect flaky texture. Each Porotta is hand-made with care, staying soft and pliable even when cooled.",
-        image: "/image/porotta.jpg",
-        details: ["Flaky Layers", "Stays Soft", "Handcrafted"],
+        name: "Authentic Pickles",
+        tagline: "Tangy, Spicy & Savory",
+        description: "A premium selection of traditional Kerala pickles including Beef, Chicken, Fish, and classic Mango. Crafted with rich aromatic spices and zero preservatives to perfectly complement any meal.",
+        image: "/image/beef-pickle.jpg",
+        details: ["Meat & Veg Options", "Traditional Spices", "No Preservatives"],
     },
 ];
 
@@ -154,7 +154,7 @@ const FoodScrollShowcase = () => {
                                     </p>
                                     <div className="flex flex-wrap justify-center md:justify-end gap-2 md:gap-3">
                                         {food.details.map((detail, idx) => (
-                                            <span key={idx} className="px-3 py-1 bg-zinc-50 dark:bg-zinc-900/50 text-[8px] md:text-xs text-gray-400 rounded-full border border-gray-100 dark:border-zinc-800">
+                                            <span key={idx} className="px-3 py-1 bg-zinc-50 dark:bg-black/50 text-[8px] md:text-xs text-gray-400 rounded-full border border-gray-100 dark:border-zinc-800">
                                                 {detail}
                                             </span>
                                         ))}

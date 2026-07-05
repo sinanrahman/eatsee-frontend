@@ -52,7 +52,7 @@ function App() {
     }, [location.pathname]);
 
     return (
-        <div className="min-h-screen bg-white dark:bg-dark-bg text-gray-900 dark:text-white">
+        <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white">
             <Navbar />
             <main>
                 <Routes>

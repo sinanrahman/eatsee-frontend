@@ -13,7 +13,7 @@ const homeProducts = [
     { id: 1, name: "Pathiri", image: "/image/pathiri.jpeg", description: "Soft and thin rice pancakes." },
     { id: 2, name: "Idiyappam", image: "/image/idiyappam.jpeg", description: "Classic steamed rice string hoppers." },
     { id: 3, name: "Vellappam", image: "/image/vellappam.jpeg", description: "Lacy coconut rice pancakes." },
-    { id: 4, name: "Chappathi", image: "/image/chappathy.jpg", description: "Healthy whole wheat flatbread." },
+    { id: 4, name: "Chappathi", image: "/image/chappathy.png", description: "Healthy whole wheat flatbread." },
 ];
 
 const Home = () => {
@@ -28,10 +28,10 @@ const Home = () => {
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div className="relative">
                         <div className="rounded-[3rem] overflow-hidden shadow-2xl">
-                            <img src="/image/logo.png" alt="Eatsee Heritage" className="w-full aspect-square object-cover" />
+                            <img src="/image/legacy.png" alt="Eatsee Heritage" className="w-full aspect-square object-cover" />
                         </div>
                         <div className="absolute -bottom-10 -right-10 bg-primary p-8 rounded-3xl shadow-xl hidden md:block">
-                            <p className="text-4xl font-black text-white">30+</p>
+                            <p className="text-4xl font-black text-white">20+</p>
                             <p className="text-white/80 font-medium">Years of Legacy</p>
                         </div>
                     </div>
@@ -50,7 +50,7 @@ const Home = () => {
                                 { icon: Heart, title: "Homemade", desc: "Crafted with love" },
                             ].map((item, i) => (
                                 <div key={i} className="flex gap-4 items-start">
-                                    <div className="w-12 h-12 bg-white dark:bg-zinc-900 rounded-2xl flex items-center justify-center text-primary shadow-sm border border-gray-100 dark:border-zinc-800">
+                                    <div className="w-12 h-12 bg-white dark:bg-black rounded-2xl flex items-center justify-center text-primary shadow-sm border border-gray-100 dark:border-zinc-800">
                                         <item.icon size={24} />
                                     </div>
                                     <div>
@@ -70,7 +70,7 @@ const Home = () => {
             </section>
 
             {/* Popular Products Preview */}
-            <section className="section-padding bg-white dark:bg-dark-bg">
+            <section className="section-padding bg-white dark:bg-black">
                 <div className="max-w-7xl mx-auto space-y-12">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                         <div className="space-y-2">
@@ -94,7 +94,7 @@ const Home = () => {
             <ReviewSection />
 
             {/* Delivery Coverage Info */}
-            <section className="section-padding bg-primary/10 dark:bg-zinc-950">
+            <section className="section-padding bg-primary/10 dark:bg-black">
                 <div className="max-w-7xl mx-auto bg-primary text-white rounded-[4rem] p-12 md:p-20 overflow-hidden relative shadow-2xl">
                     <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 translate-x-1/4"></div>
 

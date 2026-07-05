@@ -11,7 +11,6 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Products from './pages/Products'
 import Services from './pages/Services'
-import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
 import Testimonials from './pages/Testimonials'
 import WhatsAppButton from './components/WhatsAppButton'
@@ -52,7 +51,7 @@ function App() {
     }, [location.pathname]);
 
     return (
-        <div className="min-h-screen bg-white dark:bg-dark-bg text-gray-900 dark:text-white">
+        <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white">
             <Navbar />
             <main>
                 <Routes>
@@ -60,7 +59,6 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/products" element={<Products />} />
                     <Route path="/services" element={<Services />} />
-                    <Route path="/gallery" element={<Gallery />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/testimonials" element={<Testimonials />} />
                 </Routes>

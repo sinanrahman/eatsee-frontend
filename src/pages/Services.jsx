@@ -49,10 +49,10 @@ const Services = () => {
                     </div>
                     <div className="relative group">
                         <div className="rounded-[4rem] overflow-hidden shadow-2xl scale-95 group-hover:scale-100 transition-transform duration-700">
-                            <img src="/image/logo.png" alt="Services" className="w-full aspect-square object-cover" />
+                            <img src="/image/delivery.png" alt="Services" className="w-full aspect-square object-cover" />
                         </div>
                         {/* Overlay badge */}
-                        <div className="absolute -bottom-6 left-6 bg-white dark:bg-zinc-900 p-6 rounded-3xl shadow-xl flex items-center gap-4 border border-gray-100 dark:border-zinc-800">
+                        <div className="absolute -bottom-6 left-6 bg-white dark:bg-black p-6 rounded-3xl shadow-xl flex items-center gap-4 border border-gray-100 dark:border-zinc-800">
                             <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
                                 <Truck size={24} />
                             </div>
@@ -72,7 +72,7 @@ const Services = () => {
                         <motion.div
                             key={i}
                             whileHover={{ y: -10 }}
-                            className="bg-white dark:bg-zinc-900 p-12 rounded-[3rem] border border-gray-100 dark:border-zinc-800 shadow-sm"
+                            className="bg-white dark:bg-black p-12 rounded-[3rem] border border-gray-100 dark:border-zinc-800 shadow-sm"
                         >
                             <div className={`${service.color} w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl`}>
                                 <service.icon size={32} />

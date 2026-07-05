@@ -13,7 +13,7 @@ const Order = () => {
 
     if (success) {
         return (
-            <div className="pt-40 pb-40 flex items-center justify-center bg-white dark:bg-dark-bg px-6">
+            <div className="pt-40 pb-40 flex items-center justify-center bg-white dark:bg-black px-6">
                 <div className="max-w-md w-full text-center space-y-8 p-12 bg-primary/5 rounded-[3rem] border border-primary/20">
                     <div className="w-24 h-24 bg-primary text-white rounded-full flex items-center justify-center mx-auto shadow-2xl">
                         <CheckCircle size={48} />
@@ -36,7 +36,7 @@ const Order = () => {
     }
 
     return (
-        <div className="pt-24 pb-20 bg-zinc-50 dark:bg-dark-bg min-h-screen">
+        <div className="pt-24 pb-20 bg-zinc-50 dark:bg-black min-h-screen">
             <section className="section-padding">
                 <div className="max-w-3xl mx-auto space-y-12">
                     <div className="text-center space-y-4">
@@ -47,7 +47,7 @@ const Order = () => {
                         </p>
                     </div>
 
-                    <div className="bg-white dark:bg-zinc-900 rounded-[4rem] p-10 md:p-16 shadow-2xl border border-gray-100 dark:border-zinc-800">
+                    <div className="bg-white dark:bg-black rounded-[4rem] p-10 md:p-16 shadow-2xl border border-gray-100 dark:border-zinc-800">
                         <form onSubmit={handleSubmit} className="space-y-10">
                             {/* Product Selection */}
                             <div className="space-y-6">

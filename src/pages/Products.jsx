@@ -8,12 +8,15 @@ const allProducts = [
     { id: 1, name: "Pathiri", category: "Traditional", image: "/image/pathiri.jpeg", description: "Paper-thin rice pancakes, perfect with chicken or mutton curry." },
     { id: 2, name: "Idiyappam", category: "Traditional", image: "/image/idiyappam.jpeg", description: "Steamed rice noodles, light and digestible for a healthy breakfast." },
     { id: 3, name: "Vellappam", category: "Traditional", image: "/image/vellappam.jpeg", description: "Fluffy fermented rice pancakes with a slightly sweet and tangy taste." },
-    { id: 4, name: "Chappathi", category: "Daily Bread", image: "/image/chappathy.jpg", description: "Handmade whole wheat chappathi, soft and stays fresh for hours." },
+    { id: 4, name: "Chappathi", category: "Daily Bread", image: "/image/chappathy.png", description: "Handmade whole wheat chappathi, soft and stays fresh for hours." },
     { id: 5, name: "Idli", category: "Traditional", image: "/image/idli.jpg", description: "Fluffy steamed rice cakes, perfectly paired with sambar and coconut chutney." },
-    { id: 6, name: "Porotta", category: "Daily Bread", image: "/image/porotta.jpg", description: "Layered flaky flatbread made with refined wheat, best served with beef or chicken curry." },
+    { id: 6, name: "Beef Pickle", category: "Pickles", image: "/image/beef-pickle.jpg", description: "Spicy and tangy traditional Kerala beef pickle with rich flavors." },
+    { id: 7, name: "Chicken Pickle", category: "Pickles", image: "/image/chicken-pickle.jpg", description: "Authentic homemade chicken pickle infused with aromatic spices." },
+    { id: 8, name: "Fish Pickle", category: "Pickles", image: "/image/fish-pickle.jpg", description: "Delicious and savory fish pickle made with the freshest catch." },
+    { id: 9, name: "Mango Pickle", category: "Pickles", image: "/image/mango-pickle.jpg", description: "Classic tangy and spicy raw mango pickle, a perfect side dish." },
 ];
 
-const categories = ["All", "Traditional", "Daily Bread"];
+const categories = ["All", "Traditional", "Daily Bread", "Pickles"];
 
 const Products = () => {
     const [activeCategory, setActiveCategory] = useState("All");
@@ -23,13 +26,13 @@ const Products = () => {
         : allProducts.filter(p => p.category === activeCategory);
 
     return (
-        <div className="pt-24 pb-20 min-h-screen bg-zinc-50 dark:bg-dark-bg">
+        <div className="pt-24 pb-20 min-h-screen bg-zinc-50 dark:bg-black">
             {/* Header */}
             <section className="section-padding pb-10">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-8">
                     <div className="space-y-4">
                         <span className="text-primary font-bold uppercase tracking-widest text-sm">Full Menu</span>
-                        <h1 className="text-5xl md:text-7xl font-playfair font-black dark:text-white">Our Creations</h1>
+                        <h1 className="text-5xl md:text-7xl font-playfair font-black dark:text-white">Our Preparations</h1>
                     </div>
 
                     <div className="flex flex-wrap gap-3">
@@ -39,7 +42,7 @@ const Products = () => {
                                 onClick={() => setActiveCategory(cat)}
                                 className={`px-6 py-2 rounded-full font-bold text-sm transition-all ${activeCategory === cat
                                     ? 'bg-primary text-white shadow-lg'
-                                    : 'bg-white dark:bg-zinc-900 text-gray-600 dark:text-gray-400 border border-gray-100 dark:border-zinc-800'
+                                    : 'bg-white dark:bg-black text-gray-600 dark:text-gray-400 border border-gray-100 dark:border-zinc-800'
                                     }`}
                             >
                                 {cat}
@@ -77,7 +80,7 @@ const Products = () => {
             {/* CTA Box */}
             <section className="section-padding pt-32">
                 <div className="max-w-7xl mx-auto">
-                    <div className="bg-primary/5 dark:bg-zinc-900 border border-primary/20 p-12 rounded-[3rem] text-center space-y-8">
+                    <div className="bg-primary/5 dark:bg-black border border-primary/20 p-12 rounded-[3rem] text-center space-y-8">
                         <h2 className="text-3xl md:text-4xl font-playfair font-bold dark:text-white">Want to Place an Order?</h2>
                         <p className="max-w-xl mx-auto text-gray-600 dark:text-gray-400 text-lg">
                             We cater to large events, weddings, and shop supplies. Contact us on WhatsApp for bulk pricing and specialized menu items.

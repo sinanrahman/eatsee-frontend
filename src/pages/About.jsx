@@ -46,7 +46,7 @@ const About = () => {
                         viewport={{ once: true }}
                         className="relative"
                     >
-                        <img src="/image/logo.png" alt="Our Story" className="rounded-[4rem] shadow-2xl relative z-10 w-full" />
+                        <img src="/image/legacy.png" alt="Our Story" className="rounded-[4rem] shadow-2xl relative z-10 w-full" />
                         <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl"></div>
                     </motion.div>
                     <motion.div
@@ -65,6 +65,32 @@ const About = () => {
                             </p>
                             <p>
                                 Today, I am proud to carry that torch forward. We've scaled our production, but we haven't changed our recipes or our philosophy. Every Pathiri and Idiyappam we produce is made as if it were for our own family table.
+                            </p>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Founder Section */}
+            <section className="section-padding bg-zinc-50 dark:bg-black overflow-hidden pt-0">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="bg-white dark:bg-zinc-900 rounded-[3rem] p-8 md:p-12 border border-gray-100 dark:border-zinc-800 shadow-xl flex flex-col md:flex-row items-center gap-10 md:gap-16"
+                    >
+                        <div className="w-48 h-48 md:w-64 md:h-64 shrink-0 rounded-full overflow-hidden border-4 border-primary shadow-2xl relative">
+                            <img src="/image/anshid.jpg" alt="Anshid Rahman PK" className="w-full h-full object-cover" onError={(e) => e.target.src="https://ui-avatars.com/api/?name=Anshid+Rahman+PK&background=10b981&color=fff&size=512&bold=true"} />
+                        </div>
+                        <div className="space-y-6 text-center md:text-left">
+                            <div>
+                                <span className="text-primary font-bold uppercase tracking-widest text-sm">Founder & CEO</span>
+                                <h3 className="text-3xl md:text-5xl font-playfair font-black dark:text-white mt-2">ANSHID RAHMAN PK</h3>
+                            </div>
+                            <div className="w-12 h-1 bg-primary/20 mx-auto md:mx-0 rounded-full"></div>
+                            <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed max-w-2xl italic">
+                                "Our mission is to bring the authentic taste of Kerala to every home. We are deeply committed to preserving the traditions, hygiene, and flavors passed down through generations, ensuring every bite feels like a warm memory."
                             </p>
                         </div>
                     </motion.div>
@@ -92,7 +118,7 @@ const About = () => {
             </section>
 
             {/* Quality Promise */}
-            <section className="section-padding bg-zinc-50 dark:bg-zinc-950">
+            <section className="section-padding bg-zinc-50 dark:bg-black">
                 <div className="max-w-7xl mx-auto space-y-16">
                     <div className="text-center space-y-4">
                         <h2 className="text-4xl md:text-5xl font-playfair font-bold dark:text-white">Hygiene & Quality Assurance</h2>
