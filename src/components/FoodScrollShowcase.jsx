@@ -11,16 +11,9 @@ const foods = [
         tagline: "Ultra Thin & Soft",
         description: "Our signature Pathiri is crafted from the finest rice flour, steam-cooked to perfection. It's paper-thin, incredibly soft, and captures the true essence of Malabar heritage.",
         image: "/image/pathiri.jpeg",
-        details: ["100% Rice Flour", "No Preservatives", "Handmade Feel"],
+        details: ["100% Rice Flour", "No artificial colors added", "Handmade Feel"],
     },
-    {
-        id: 2,
-        name: "Idiyappam",
-        tagline: "Delicate String Hoppers",
-        description: "Delicate strands of rice dough, perfectly steamed to create a light and airy texture. A healthy breakfast staple that pairs beautifully with spicy curries or coconut milk.",
-        image: "/image/idiyappam.jpeg",
-        details: ["Traditional Steam", "Easy to Digest", "Pure Ingredients"],
-    },
+
     {
         id: 3,
         name: "Vellappam",
@@ -37,21 +30,15 @@ const foods = [
         image: "/image/chappathy.png",
         details: ["Premium Wheat", "Zero Oil Option", "Long-lasting Softness"],
     },
-    {
-        id: 5,
-        name: "Idli",
-        tagline: "Steamed to Perfection",
-        description: "Fluffy, cloud-soft steamed rice cakes made from naturally fermented batter. Light, digestible, and deeply satisfying — best enjoyed with coconut chutney and sambar.",
-        image: "/image/idli.jpg",
-        details: ["Fermented Batter", "Zero Oil", "Probiotic Rich"],
-    },
+
     {
         id: 6,
         name: "Authentic Pickles",
-        tagline: "Tangy, Spicy & Savory",
-        description: "A premium selection of traditional Kerala pickles including Beef, Chicken, Fish, and classic Mango. Crafted with rich aromatic spices and zero preservatives to perfectly complement any meal.",
+        tagline: "Coming Soon...",
+        description: "Our premium range of traditional Kerala pickles is coming soon. Get ready for rich aromatic spices with zero artificial colors.",
         image: "/image/beef-pickle.jpg",
-        details: ["Meat & Veg Options", "Traditional Spices", "No Preservatives"],
+        details: ["Coming Soon", "Traditional Spices", "No artificial colors added"],
+        comingSoon: true,
     },
 ];
 
@@ -160,14 +147,22 @@ const FoodScrollShowcase = () => {
                                         ))}
                                     </div>
                                     <div className="pt-4 md:pt-8 flex justify-center md:justify-end">
-                                        <a
-                                            href={`https://wa.me/919562496164?text=${encodeURIComponent(`Hi Eatsee Foods, I would like to order ${food.name}.`)}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="px-6 py-3 md:px-10 md:py-4 bg-primary text-white text-xs md:text-base font-bold rounded-xl md:rounded-2xl transition-all active:scale-95 shadow-lg hover:bg-primary-dark"
-                                        >
-                                            Order {food.name}
-                                        </a>
+                                        {food.comingSoon ? (
+                                            <span
+                                                className="px-6 py-3 md:px-10 md:py-4 bg-gray-300 dark:bg-zinc-800 text-gray-500 dark:text-gray-400 text-xs md:text-base font-bold rounded-xl md:rounded-2xl shadow-lg cursor-not-allowed"
+                                            >
+                                                Coming Soon
+                                            </span>
+                                        ) : (
+                                            <a
+                                                href={`https://wa.me/919562496164?text=${encodeURIComponent(`Hi Eatsee Foods, I would like to order ${food.name}.`)}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="px-6 py-3 md:px-10 md:py-4 bg-primary text-white text-xs md:text-base font-bold rounded-xl md:rounded-2xl transition-all active:scale-95 shadow-lg hover:bg-primary-dark"
+                                            >
+                                                Order {food.name}
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
                             </div>

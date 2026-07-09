@@ -81,7 +81,7 @@ const About = () => {
                         className="bg-white dark:bg-zinc-900 rounded-[3rem] p-8 md:p-12 border border-gray-100 dark:border-zinc-800 shadow-xl flex flex-col md:flex-row items-center gap-10 md:gap-16"
                     >
                         <div className="w-48 h-48 md:w-64 md:h-64 shrink-0 rounded-full overflow-hidden border-4 border-primary shadow-2xl relative">
-                            <img src="/image/anshid.jpg" alt="Anshid Rahman PK" className="w-full h-full object-cover" onError={(e) => e.target.src="https://ui-avatars.com/api/?name=Anshid+Rahman+PK&background=10b981&color=fff&size=512&bold=true"} />
+                            <img src="/image/Owner.PNG" alt="Anshid Rahman PK" className="w-full h-full object-cover" onError={(e) => e.target.src="https://ui-avatars.com/api/?name=Anshid+Rahman+PK&background=10b981&color=fff&size=512&bold=true"} />
                         </div>
                         <div className="space-y-6 text-center md:text-left">
                             <div>
@@ -127,8 +127,8 @@ const About = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
-                            { title: "Safe Ingredients", desc: "Sourced from trusted local farmers", icon: Shield },
-                            { title: "Zero Additives", desc: "No artificial colors or preservatives", icon: CheckCircle2 },
+                            { title: "Safe Ingredients", desc: "Sourced from trusted dealers", icon: Shield },
+                            { title: "Zero Additives", desc: "No artificial colors added", icon: CheckCircle2 },
                             { title: "Hygienic Kitchen", desc: "State of the art sterile environment", icon: Award },
                             { title: "Daily Checks", desc: "Rigorous quality testing per batch", icon: Users },
                         ].map((item, i) => (

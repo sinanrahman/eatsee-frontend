@@ -10,10 +10,7 @@ const allProducts = [
     { id: 3, name: "Vellappam", category: "Traditional", image: "/image/vellappam.jpeg", description: "Fluffy fermented rice pancakes with a slightly sweet and tangy taste." },
     { id: 4, name: "Chappathi", category: "Daily Bread", image: "/image/chappathy.png", description: "Handmade whole wheat chappathi, soft and stays fresh for hours." },
     { id: 5, name: "Idli", category: "Traditional", image: "/image/idli.jpg", description: "Fluffy steamed rice cakes, perfectly paired with sambar and coconut chutney." },
-    { id: 6, name: "Beef Pickle", category: "Pickles", image: "/image/beef-pickle.jpg", description: "Spicy and tangy traditional Kerala beef pickle with rich flavors." },
-    { id: 7, name: "Chicken Pickle", category: "Pickles", image: "/image/chicken-pickle.jpg", description: "Authentic homemade chicken pickle infused with aromatic spices." },
-    { id: 8, name: "Fish Pickle", category: "Pickles", image: "/image/fish-pickle.jpg", description: "Delicious and savory fish pickle made with the freshest catch." },
-    { id: 9, name: "Mango Pickle", category: "Pickles", image: "/image/mango-pickle.jpg", description: "Classic tangy and spicy raw mango pickle, a perfect side dish." },
+    { id: 6, name: "Authentic Pickles", category: "Pickles", image: "/image/beef-pickle.jpg", description: "Our premium range of traditional Kerala pickles is coming soon. Stay tuned!", comingSoon: true },
 ];
 
 const categories = ["All", "Traditional", "Daily Bread", "Pickles"];

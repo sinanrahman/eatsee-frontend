@@ -11,7 +11,6 @@ const WHATSAPP_URL = `https://wa.me/919562496164?text=${encodeURIComponent("Hi E
 
 const homeProducts = [
     { id: 1, name: "Pathiri", image: "/image/pathiri.jpeg", description: "Soft and thin rice pancakes." },
-    { id: 2, name: "Idiyappam", image: "/image/idiyappam.jpeg", description: "Classic steamed rice string hoppers." },
     { id: 3, name: "Vellappam", image: "/image/vellappam.jpeg", description: "Lacy coconut rice pancakes." },
     { id: 4, name: "Chappathi", image: "/image/chappathy.png", description: "Healthy whole wheat flatbread." },
 ];
@@ -46,7 +45,7 @@ const Home = () => {
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
                             {[
-                                { icon: ShieldCheck, title: "Pure Quality", desc: "No preservatives added" },
+                                { icon: ShieldCheck, title: "Pure Quality", desc: "No artificial colors added" },
                                 { icon: Heart, title: "Homemade", desc: "Crafted with love" },
                             ].map((item, i) => (
                                 <div key={i} className="flex gap-4 items-start">

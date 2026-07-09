@@ -68,10 +68,10 @@ const Contact = () => {
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="bg-white dark:bg-black border border-gray-100 dark:border-zinc-800 p-10 md:p-16 rounded-[4rem] shadow-2xl"
+                            className="bg-white dark:bg-black border border-gray-100 dark:border-zinc-800 p-10 md:p-16 rounded-[4rem] shadow-2xl flex flex-col h-full"
                         >
                             <h2 className="text-3xl font-playfair font-bold dark:text-white mb-8">Send a Message</h2>
-                            <form onSubmit={handleSubmit} className="space-y-6">
+                            <form onSubmit={handleSubmit} className="space-y-6 flex flex-col flex-1">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div className="space-y-2">
                                         <label className="text-sm font-bold text-gray-400 ml-2">Full Name</label>
@@ -103,17 +103,17 @@ const Contact = () => {
                                     </select>
                                 </div>
 
-                                <div className="space-y-2">
+                                <div className="space-y-2 flex flex-col flex-1">
                                     <label className="text-sm font-bold text-gray-400 ml-2">Your Message</label>
                                     <textarea
                                         rows="5"
                                         required
-                                        className="w-full px-6 py-4 bg-zinc-50 dark:bg-black border border-gray-100 dark:border-zinc-800 rounded-2xl outline-none focus:border-primary transition-colors dark:text-white resize-none"
+                                        className="w-full px-6 py-4 bg-zinc-50 dark:bg-black border border-gray-100 dark:border-zinc-800 rounded-2xl outline-none focus:border-primary transition-colors dark:text-white resize-none flex-1"
                                         placeholder="Tell us how we can help you..."
                                     ></textarea>
                                 </div>
 
-                                <button type="submit" className="w-full py-5 bg-primary hover:bg-primary-dark text-white font-bold rounded-2xl transition-all flex items-center justify-center gap-3 group">
+                                <button type="submit" className="w-full py-5 bg-primary hover:bg-primary-dark text-white font-bold rounded-2xl transition-all flex items-center justify-center gap-3 group mt-auto">
                                     Send Inquiry <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                 </button>
                             </form>

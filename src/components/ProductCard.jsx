@@ -17,15 +17,24 @@ const ProductCard = ({ product }) => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                    <a
-                        href={whatsappUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full py-3 bg-[#25D366] text-white font-bold rounded-xl flex items-center justify-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform"
-                        onClick={e => e.stopPropagation()}
-                    >
-                        <MessageCircle size={18} /> Order on WhatsApp
-                    </a>
+                    {product.comingSoon ? (
+                        <div
+                            className="w-full py-3 bg-gray-500/80 backdrop-blur-sm text-white font-bold rounded-xl flex items-center justify-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform cursor-not-allowed"
+                            onClick={e => e.stopPropagation()}
+                        >
+                            Coming Soon
+                        </div>
+                    ) : (
+                        <a
+                            href={whatsappUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full py-3 bg-[#25D366] text-white font-bold rounded-xl flex items-center justify-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform"
+                            onClick={e => e.stopPropagation()}
+                        >
+                            <MessageCircle size={18} /> Order on WhatsApp
+                        </a>
+                    )}
                 </div>
             </div>
 
@@ -43,14 +52,20 @@ const ProductCard = ({ product }) => {
                 </p>
                 <div className="flex items-center justify-between pt-4 border-t border-gray-50 dark:border-zinc-800">
                     <span className="text-gray-400 text-xs italic">Available in Omassery</span>
-                    <a
-                        href={whatsappUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary font-bold text-sm flex items-center gap-1 group/btn hover:underline"
-                    >
-                        Order Now <ChevronRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-                    </a>
+                    {product.comingSoon ? (
+                        <span className="text-gray-400 font-bold text-sm cursor-not-allowed">
+                            Coming Soon
+                        </span>
+                    ) : (
+                        <a
+                            href={whatsappUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary font-bold text-sm flex items-center gap-1 group/btn hover:underline"
+                        >
+                            Order Now <ChevronRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                        </a>
+                    )}
                 </div>
             </div>
         </motion.div>
